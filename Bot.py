@@ -1,3 +1,4 @@
+import os
 import time
 
 import discord
@@ -10,7 +11,8 @@ from time import sleep
 import interactions
 from Definitions import Roles, Modes
 from LCU import CreateParty, InfoMatchMaking, QuitParty, SelectRoles, StopMatchMaking, StartMatchMaking
-bot = interactions.Client(token="")
+token = os.getenv('CLIENT_TOKEN')
+bot = interactions.Client(token=token)
 
 @bot.command(
     name="quit-party", 
