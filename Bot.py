@@ -11,7 +11,11 @@ from time import sleep
 import interactions
 from Definitions import Roles, Modes
 from LCU import CreateParty, InfoMatchMaking, QuitParty, SelectRoles, StopMatchMaking, StartMatchMaking
-token = os.getenv('CLIENT_TOKEN')
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+token = os.getenv("TOKEN")
 bot = interactions.Client(token=token)
 
 @bot.command(
